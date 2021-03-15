@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.form-control {
+  display: block;
+  color: #888;
+  margin-bottom: .8rem;
+
+  &.invalid {
+    color: var(--primary-color);
+    input {
+      border-color: var(--primary-color);
+    }
+  }
+
+  .validation {
+    color: var(--primary-color);
+  }
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--light-color);
+    color: #111;
+  }
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-dark {
+  background: grey;
+  color: white;
+}
+
+.card {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-content {
+    margin-bottom: .5rem;
+  }
+}
