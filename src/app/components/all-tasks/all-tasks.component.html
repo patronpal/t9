@@ -1,0 +1,6 @@
+
+<!--через ngIf делаем асинк обсервбл и получаем все таски-->
+<div *ngIf="Tasks$ | async as tasksFromserver">
+  <p> {{ tasksFromserver }} </p>
+</div>
+

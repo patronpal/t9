@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h3>Простая форма ввода заявки</h3>
+  <div class="card">
+    <div class="form-control">
+      <label for="taskId">Заявка</label>
+      <input id="taskId" type="text" title="task" formControlName="task">
+    </div>
+    <button class="btn btn-dark" (click)="sendTask()">Отправить</button>
+  </div>
+
+  <hr>
+
+  <h3>Авторизация</h3>
+  <div class="card">
+    <div class="form-control">
+      <label for="emailId">Логин(email):</label>
+      <input id="emailId" type="email" formControlName="email">
+      <div
+        *ngIf="form.get('email').touched && form.get('email').invalid"
+        class="validation">
+        <small *ngIf="form.get('email').errors.required">Поле не заполнено</small>
+        <small *ngIf="form.get('email').errors.email">Введите корректный email</small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label for="passwordId">Пароль:</label>
+      <input id="passwordId" type="password" formControlName="password">
+      <div
+        *ngIf="form.get('password').touched && form.get('password').invalid"
+        class="validation">
+        <small *ngIf="form.get('password').errors.required">Поле не заполнено</small>
+        <small *ngIf="form.get('password').errors.minLength">Пароль должен состоять из 6 символов</small>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-dark"
+      type="submit"
+    >Войти
+    </button>
+  </div>
+</form>
